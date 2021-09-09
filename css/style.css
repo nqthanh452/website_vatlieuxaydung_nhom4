@@ -39,7 +39,7 @@ body{
 }
 .logo{
 	float:left;
-	width:33%;
+	width:22%;
 }
 /**** Header Top Right ****/
 .header_top_right{
@@ -49,9 +49,9 @@ body{
 }
 .search_box{
 	float:left;
-	border: 1px solid #DBDBDB;
+	border: 1px solid #857676;
 	position:relative;
-	width:47%;
+	width:51%;
 }
 .search_box input[type="text"]{
 	width:74%;
@@ -60,7 +60,7 @@ body{
 	border:none;
 	background:none;
 	font-size:14px;
-	color:#a5a5a5;
+	color:#3d3434;
 	font-family:Arial;
 	outline:none;
 	margin:0;
@@ -165,14 +165,14 @@ input[type="number"] {
   color: #444;
   display: block;
   float: left;
-  font-size: 27px;
+  font-size: 24px;
   height: 38px;
   margin-left: 10px;
   text-align: center;
   width: 144px;
 }
 .login a {
-	color:#333;
+	color:rgb(250, 37, 37);
 }
 /*** Login ***/
 .register_account h3,.login_panel h3{
