@@ -6,7 +6,7 @@
 
 <div class="main">
     <div class="content">
-    	<div class="content_top">s
+    	<div class="content_top">
     		<div class="heading">
     		<h3>Gạch</h3>
     		</div>
