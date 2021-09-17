@@ -18,7 +18,6 @@ class adminlogin
 		$this->db = new Database();
 		$this->fm = new Format();
 	}
-	
 	public function login_admin($adminUser, $adminPass){
 			$adminUser = $this->fm->validation($adminUser);
 			$adminPass = $this->fm->validation($adminPass);
