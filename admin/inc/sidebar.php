@@ -10,6 +10,13 @@
                         
                     </ul>
                 </li>
+                <li><a class="menuitem">Thương hiệu sản phẩm</a>
+                    <ul class="submenu">
+                        <li><a href="brandadd.php">Thêm thương hiệu</a></li>
+                        <li><a href="brandlist.php">Danh sách thương hiệu</a></li>
+                        
+                    </ul>
+                </li>
 				
                  <li><a class="menuitem">Update Pages</a>
                     <ul class="submenu">
