@@ -55,7 +55,7 @@
 						<li><img src="images/nha-1.jpg" alt=""/></li>
 						<li><img src="images/nha-2.jpg" alt=""/></li>
 						<li><img src="images/nha-3.jpg" alt=""/></li>
-						<li><img src="images/nha-4.jpg" alt=""/></li>
+						<li><img src="images/nha-5.jpg" alt=""/></li>
 				    </ul>
 				  </div>
 	      </section>

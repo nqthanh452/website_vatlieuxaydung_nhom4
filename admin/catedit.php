@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] =='POST') {
 	
     $updateCat = $cat->update_category($catName,$id);
 }
-?>
+?> 
 <?php  ?>
         <div class="grid_10">
             <div class="box round first grid">
