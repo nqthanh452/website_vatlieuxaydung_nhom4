@@ -1,4 +1,4 @@
-﻿<?php include 'inc/header.php';?>
+<?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
 <?php include '../classes/brand.php';?>
 <?php include '../classes/category.php';?>
@@ -37,14 +37,14 @@
 			</thead>
 			<tbody>
 				<?php
-				$pdlist = $pd->show_product();
-				if($pdlist){
-					$i = 0;
-					while($result = $pdlist->fetch_assoc()){
-						$i++;
+					$pdlist = $pd->show_product();
+					if($pdlist){
+						$i = 0;
+						while($result = $pdlist->fetch_assoc()){
+							$i++;
 				?>
 				<tr class="odd gradeX">
-					<td><?php echo $i ?></td>
+					<td><?php echo $i; ?></td>
 					<td><?php echo $result['productName'] ?></td>
 					<td><?php echo $result['price'] ?></td>
 					<td><img src="uploads/<?php echo $result['image']?>" width = "80"></td>
