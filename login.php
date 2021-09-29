@@ -1,6 +1,6 @@
 <?php
 	include 'inc/header.php';
-	include 'inc/slider.php';
+	//include 'inc/slider.php';
  ?>
 
 <div class="main">
@@ -23,51 +23,39 @@
 						<tr>
 						<td>
 							<div>
-							<input type="text" value="Họ và tên" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Họ và tên';}" >
+							<input type="text" name="họ và tên" placeholder =" Họ và Tên..." > 
+							</div>
+							<div>
+
+							   <input type="text" name="thành phố"  placeholder ="Thành phố..." > 
 							</div>
 							
 							<div>
-							   <input type="text" value="Thành phố" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Thành phố';}">
-							</div>
-							
-							<div>
-								<input type="text" value="Mã thành phố" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mã thành phố';}">
+								<input type="text"name ="zipcode" placeholder ="zipcode..." > 
 							</div>
 							<div>
-								<input type="text" value="E-Mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-Mail';}">
+								<input type="text" name ="e-Mail" placeholder =" E-Mail..." > 
 							</div>
 		    			 </td>
 		    			<td>
 						<div>
-							<input type="text" value="Địa chỉ" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Địa chỉ';}">
+							<input type="text" name ="địa chỉ" placeholder =" Địa chỉ..." > 
 						</div>
 		    		<div>
 						<select id="Quốc tịch" name="Quốc tịch" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">Chọn Quốc Tịch</option>         
-							<option value="AF">Afghanistan</option>
-							<option value="AL">Albania</option>
-							<option value="DZ">Algeria</option>
-							<option value="AR">Argentina</option>
-							<option value="AM">Armenia</option>
-							<option value="AW">Aruba</option>
-							<option value="AU">Australia</option>
-							<option value="AT">Austria</option>
-							<option value="AZ">Azerbaijan</option>
-							<option value="BS">Bahamas</option>
-							<option value="BH">Bahrain</option>
-							<option value="BD">Bangladesh</option>
-							<option value="USA">Mỹ</option>
-							<option value="VNM">Việt Nam</option>
+							<option value="null">Chọn Quốc Tịch</option> 
 
+							<option value="AF">Afghanistan</option>
+							
 		         </select>
 				 </div>		        
 	
 		           <div>
-		          <input type="text" value="Số điện thoại" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Số điện thoại';}">
+		          <input type="text" name ="số điện thoại" placeholder ="Số điện thoại..." > 
 		          </div>
 				  
 				  <div>
-					<input type="text" value="Mật khẩu" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mật khẩu';}">
+					<input type="text" name ="mật khẩu" placeholder ="Mật khẩu..." >
 				</div>
 		    	</td>
 		    </tr> 
