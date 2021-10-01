@@ -37,7 +37,13 @@ if($_SERVER['REQUEST_METHOD'] =='POST' && isset($_POST['submit'])) {
 					<form action="" method="post">
 						<input type="number" class="buyfield" name="quantity" value="1" min="1"/>
 						<input type="submit" class="buysubmit" name="submit" value="Buy Now"/>
-					</form>				
+                       </form>
+					 <?php
+                        if(isset($AddtoCart)){
+                                echo '<span style = "color:red;font-size:18px;">Product Already Added</span>';
+                            }
+                        ?>
+                     		
 				</div>
 			</div>
 			<div class="product-desc">
