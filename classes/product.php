@@ -165,8 +165,8 @@ class product
   public function get_details($id){
     $query = "
     SELECT tbl_product.*,tbl_category.catName, tbl_brand.brandName
-     FROM tbl_product INNER JOIN tbl_category ON tbl_product.catId = tbl_category.catId
-     INNER JOIN tbl_brand ON tbl_product.brandId = tbl_brand.brandId
+     FROM tbl_product LEFT JOIN tbl_category ON tbl_product.catId = tbl_category.catId
+     LEFT JOIN tbl_brand ON tbl_product.brandId = tbl_brand.brandId
      where tbl_product.productId = '$id'";
      $result = $this->db->select($query);
      return $result;

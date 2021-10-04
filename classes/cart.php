@@ -23,22 +23,45 @@ class cart
 		 $quantity = $this->fm->validation($quantity);
 		 $quantity = mysqli_real_escape_string($this->db->link, $quantity);
          $id = mysqli_real_escape_string($this->db->link, $id);
-         $sId = session_id();
+		 $sId =  session_id();
 
-         $query = "SELECT * FROM tbl_product where productId = '$id'";
-         $result = $this->db->select($query)->fetch_assoc();
-
+         $query = "SELECT * FROM tbl_product WHERE productId = '$id'";
+         $result_check = $this->db->select($query);
+		 
+		if(empty($result_check)){
+			$msg = "Product does not exist";
+         	return $msg;
+		}
+		$result = $result_check->fetch_assoc();
          $image = $result["image"];
          $price = $result["price"];
          $productName = $result["productName"];
-         $query_insert = "INSERT INTO tbl_cart(productId, quantity, sId, image, price, productName) VALUES('$id','$quantity','$sId','$image','$price','$productName')";
-		 $insert_cart = $this->db->insert($query_insert);
 		 
+         $check_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND sId = '$sId'";
+		 $result_cart = $this->db->select($check_cart);
+		 
+         if(!$result_cart){
+			$query_insert = "INSERT INTO tbl_cart(productId, quantity, sId, image, price, productName) VALUES('$id','$quantity','$sId','$image','$price','$productName')";
+			$insert_cart = $this->db->insert($query_insert);
+			
 			if($result){
-               header('Location:cart.php');
-            }else{
-               header('Location:404.php');
-                }
+				header('Location:cart.php');
+			}else{
+				header('Location:404.php');
+            }
+         	
+         }else{
+			$msg = "Product Already Added";
+			return $msg;
+			
+        }
 	}
+	public function get_product_cart(){
+		 $sId = session_id();  
+		 $query =  "SELECT * FROM tbl_cart WHERE sId = '$sId'";
+		 $result = $this->db->select($query);
+		 return $result;
+	}
+
 }
 ?>

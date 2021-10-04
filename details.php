@@ -17,6 +17,7 @@ if($_SERVER['REQUEST_METHOD'] =='POST' && isset($_POST['submit'])) {
     	<div class="section group">
 			<?php
 			 $get_product_details = $product->get_details($id);
+			 
 			 if($get_product_details){
 				 while($result_details = $get_product_details->fetch_assoc()){
 			 
@@ -37,7 +38,13 @@ if($_SERVER['REQUEST_METHOD'] =='POST' && isset($_POST['submit'])) {
 					<form action="" method="post">
 						<input type="number" class="buyfield" name="quantity" value="1" min="1"/>
 						<input type="submit" class="buysubmit" name="submit" value="Buy Now"/>
-					</form>				
+                       </form>
+					 <?php
+                        if(isset($AddtoCart)){
+                                echo '<span style = "color:red;font-size:18px;">'.$AddtoCart.'</span>';
+                            }
+                        ?>
+                     		
 				</div>
 			</div>
 			<div class="product-desc">
