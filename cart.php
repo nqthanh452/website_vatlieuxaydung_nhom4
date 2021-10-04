@@ -33,7 +33,7 @@ include 'inc/header.php';
 								<td><?php echo $result['price'] ?></td>
 								<td>
 									<form action="" method="post">
-										<input type="number" name="Quantity" min ="0" value = "<?php echo  $result['Quantity'] ?>"/>
+										<input type="number" name="quantity" min ="0" value ="<?php echo  $result['quantity'] ?>"/>
 										<input type="submit" name="submit" value="Update"/>
 									</form>
 								</td>
