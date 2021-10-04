@@ -18,7 +18,7 @@ include 'inc/header.php';
 								<th width="10%">Action</th>
 							</tr>
 							<?php
-							$get_product_cart = $ct->get_product_cart();
+							$get_product_cart = $ct->get_product_cart(); 
 							if($get_product_cart){
 								$subtotal = 0;
 							
@@ -29,8 +29,8 @@ include 'inc/header.php';
 
 							<tr>
 								<td><?php echo $result['productName'] ?></td>
-								<td><img src="admin/uploads/<?php echo $result['Image'] ?>" alt=""/></td>
-								<td><?php echo $result['Price'] ?></td>
+								<td><img src="admin/uploads/<?php echo $result['image'] ?>" alt=""/></td>
+								<td><?php echo $result['price'] ?></td>
 								<td>
 									<form action="" method="post">
 										<input type="number" name="Quantity" min ="0" value = "<?php echo  $result['Quantity'] ?>"/>
@@ -38,7 +38,7 @@ include 'inc/header.php';
 									</form>
 								</td>
 								<td><?php
-								$total = $result['Price'] * $result['Quantity'];
+								$total = $result['price'] * $result['quantity'];
 								echo $total;
 								?></td>
 								<td><a href="">X</a></td>
@@ -69,8 +69,8 @@ include 'inc/header.php';
 							<tr>
 								<th>Grand Total :</th>
 								<td><?php
-								$vat = $subtotal * 0.1;
-								$gtotal = $subtotal + $vat ;
+								$vats = $subtotal * 0.1;
+								$gtotal = $subtotal + $vats ;
 								echo $gtotal;
 
 								?></td>

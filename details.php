@@ -3,6 +3,7 @@
 	//include 'inc/slider.php';
  ?>
 <?php  
+
 if(!isset($_GET['proid'])|| $_GET['proid'] == NULL){
     echo "<script>windown.location ='404.php' </script>";
 }else{
@@ -17,6 +18,7 @@ if($_SERVER['REQUEST_METHOD'] =='POST' && isset($_POST['submit'])) {
     	<div class="section group">
 			<?php
 			 $get_product_details = $product->get_details($id);
+			 
 			 if($get_product_details){
 				 while($result_details = $get_product_details->fetch_assoc()){
 			 
@@ -40,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] =='POST' && isset($_POST['submit'])) {
                        </form>
 					 <?php
                         if(isset($AddtoCart)){
-                                echo '<span style = "color:red;font-size:18px;">Product Already Added</span>';
+                                echo '<span style = "color:red;font-size:18px;">'.$AddtoCart.'</span>';
                             }
                         ?>
                      		

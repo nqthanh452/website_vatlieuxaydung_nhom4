@@ -1,6 +1,7 @@
 <?php
     include 'lib/session.php';
     Session::init();
+
 ?>
 <?php
 	include_once 'lib/database.php';
