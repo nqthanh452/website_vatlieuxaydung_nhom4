@@ -3,7 +3,6 @@
 	//include 'inc/slider.php';
  ?>
 <?php  
-
 if(!isset($_GET['proid'])|| $_GET['proid'] == NULL){
     echo "<script>windown.location ='404.php' </script>";
 }else{
