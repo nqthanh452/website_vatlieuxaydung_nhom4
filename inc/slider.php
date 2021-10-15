@@ -1,48 +1,84 @@
-<div class="header_bottom">
+ <div class="header_bottom">
 		<div class="header_bottom_left">
 			<div class="section group">
+				<?php
+				$getLastestHoaSen = $product->getLastestHoaSen();
+				if($getLastestHoaSen){
+					while($resulthoasen = $getLastestHoaSen->fetch_assoc()){
+				?>
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						 <a href="details.php"> <img src="images/ngoi-lop-song.jpg" alt="" /></a>
+						 <a href="details.php"> <img src="admin/uploads/<?php echo $resulthoasen['image'] ?>" alt="" /></a>
 					</div>
 				    <div class="text list_2_of_1">
-						<h2>Ngói lợp sóng lớn màu S605</h2>
-						<p>18.950 vnđ/ Viên</p>
-						<div class="button"><span><a href="details.php">Thêm vào giỏ</a></span></div>
+						<h2>Hoa Sen</h2>
+						<p><?php echo $resulthoasen['productName'] ?></p>
+						<div class="button"><span><a href="details.php?proid=<?php echo $resulthoasen['productId']?>">Thêm vào giỏ</a></span></div>
 				   </div>
-			   </div>			
+			   </div>
+			   <?php
+			}}
+			   ?>
+
+			   <?php
+				$getLastestDongTam = $product->getLastestDongTam();
+				if($getLastestDongTam){
+					while($resultdongtam = $getLastestDongTam->fetch_assoc()){
+				?>			
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						  <a href="details.php"><img src="images/gach-bong-dau-an.jpg" alt="" / ></a>
+						  <a href="details.php"><img src="admin/uploads/<?php echo $resultdongtam['image'] ?>" alt="" / ></a>
 					</div>
 					<div class="text list_2_of_1">
-						  <h2>Gạch bông dấu ấn</h2>
-						  <p>18.480 vnđ/ Viên</p>
-						  <div class="button"><span><a href="details.php">Thêm vào giỏ</a></span></div>
+						  <h2>Đồng Tâm</h2>
+						  <p><?php echo $resultdongtam['productName'] ?></p>
+						  <div class="button"><span><a href="details.php?proid=<?php echo $resultdongtam['productId']?>">Thêm vào giỏ</a></span></div>
 					</div>
 				</div>
 			</div>
+			<?php
+			}}
+			   ?>
+
+			<?php
+				$getLastestHoaPhat = $product->getLastestHoaPhat();
+				if($getLastestHoaPhat){
+					while($resulthoaphat = $getLastestHoaPhat->fetch_assoc()){
+				?>	
 			<div class="section group">
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						 <a href="details.php"> <img src="images/gach-granite.jpg" alt="" /></a>
+						 <a href="details.php"> <img src="admin/uploads/<?php echo $resulthoaphat['image'] ?>" alt="" /></a>
 					</div>
 				    <div class="text list_2_of_1">
-						<h2>GẠCH GRANITE 80802</h2>
-						<p>595.000 vnđ/ m2</p>
-						<div class="button"><span><a href="details.php">Thêm vào giỏ</a></span></div>
+						<h2>Hòa Phát</h2>
+						<p><?php echo $resulthoaphat['productName'] ?></p>
+						<div class="button"><span><a href="details.php?proid=<?php echo $resulthoaphat['productId']?>">Thêm vào giỏ</a></span></div>
 				   </div>
-			   </div>			
+			   </div>
+			   <?php
+			}}
+			   ?>
+
+			<?php
+				$getLastestNhuaBinhMinh = $product->getLastestNhuaBinhMinh();
+				if($getLastestNhuaBinhMinh){
+					while($resultnhuabinhminh = $getLastestNhuaBinhMinh->fetch_assoc()){
+				?>				
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						  <a href="details.php"><img src="images/ton-hoa-sen-5-song-mau-xanh-ngoc.jpg" alt="" /></a>
+						  <a href="details.php"><img src="admin/uploads/<?php echo $resultnhuabinhminh['image'] ?>" alt="" /></a>
 					</div>
 					<div class="text list_2_of_1">
-						  <h2>Tôn hoa sen</h2>
-						  <p>32.000,0₫ – 60.000,0₫</p>
-						  <div class="button"><span><a href="details.php">Thêm vào giỏ</a></span></div>
+						  <h2>Nhựa Bình Minh</h2>
+						  <p><?php echo $resultnhuabinhminh['productName'] ?></p>
+						  <div class="button"><span><a href="details.php?proid=<?php echo $resultnhuabinhminh['productId']?>">Thêm vào giỏ</a></span></div>
 					</div>
 				</div>
+				<?php
+			}}
+			   ?>
+
 			</div>
 		  <div class="clear"></div>
 		</div>
