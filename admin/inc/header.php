@@ -2,7 +2,21 @@
     include '../lib/session.php';
     Session::checkSession();
 ?>
+  include 'lib/database.php';
+  include 'helpers/format.php';
 
+  spl_autoload_register(function($class){
+   include_once "classes/".$class/"".$class."php";
+  });
+
+  $db = new Database();
+  $fm = new Fomat();
+  $ct = new cart();
+  $us = new user();
+  $cat = new category();
+  $cs = new customer();
+  $product = new product();
+?>
 
 <?php
   header("Cache-Control: no-cache, must-revalidate");

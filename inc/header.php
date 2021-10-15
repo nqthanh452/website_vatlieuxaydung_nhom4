@@ -17,6 +17,7 @@
 	$us = new user();
 	$cat = new category();
 	$product = new product();
+	$cs = new customer();
 ?>
 
 <?php
@@ -68,11 +69,38 @@
 					<div class="cart">
 						<a href="#" title="View my shopping cart" rel="nofollow">
 								<span class="cart_title">Giỏ hàng</span>
-								<span class="no_product">(trống)</span>
+								<span class="no_product">
+									<?php 
+									$check_cart = $ct->check_cart();
+										if($check_cart){
+											$sum = Session::get("sum");
+											$qty = Session::get("qty");
+											echo $sum.' '.'đ'.'-'.'Qty:'.$qty ;
+											}else{
+											echo 'Trống';
+										}
+
+									?>
+								</span>
 							</a>
 						</div>
 			      </div>
-		   <div class="login"><a href="login.php">Đăng nhập</a></div>
+			  <?php
+			  	if(isset($_GET['customer_id'])){
+			  		Session::destroy();
+			  	}
+			  ?>
+		   <div class="login">
+		   	<?php
+		   	$login_check = Session::get('customer_login');
+		   	if($login_check==false){
+		   		echo '<a href="login.php">Đăng nhập</a></div>';
+		   	}else{
+		   		echo '<a href="?customer_id='.Session::get('customer_id').'">Đăng xuất</a></div>';
+		   	}
+		   	?>
+
+		   
 		 <div class="clear"></div>
 	 </div>
 	 <div class="clear"></div>
