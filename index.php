@@ -3,6 +3,7 @@
 	include 'inc/slider.php';
  ?>
 <div class="main">
+	
     <div class="content">
     	<div class="content_top">
     		<div class="heading">
@@ -11,34 +12,23 @@
     		<div class="clear"></div>
     	</div>
 	      <div class="section group">
+			  <?php
+				$product_featured = $product->getproduct_featured();
+				if($product_featured){
+					while($result = $product_featured->fetch_assoc()){
+				
+			  ?>
 				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="details.php"><img src="images/cat-xay-dung.jpg" alt="" /></a>
-					 <h2>Cát xây dựng </h2>
-					 <p>Cát xây dựng giá rẻ đảm bảo tiêu chuẩn chất lượng. Các loại cát san lấp, cát xây tô, cát bê tông</p>
-					 <p><span class="price">150.000đ/1m3</span></p>
-				     <div class="button"><span><a href="details.php" class="details">Chi tiết</a></span></div>
+					 <a href="details.php?proid=<?php echo $result['productId'] ?>"><img src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
+					 <h2><?php echo $result['productName'] ?></h2>
+					 <p><?php echo $fm->textShorten($result['product_desc'],50) ?></p>
+					 <p><span class="price"><?php echo $result['price']. " VND" ?></span></p>
+				     <div class="button"><span><a href="details.php?proid=<?php echo $result['productId'] ?>" class="details">Chi tiết</a></span></div>
 				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="details.php"><img src="images/bot-cha-ron-1.jpg" alt="" /></a>
-					 <h2>BỘT CHÀ RON </h2>
-					 <p> KHÁNG KHUẨN GROUTEX, 5KG, GRO0004H-H+</p>
-					 <p><span class="price">156.000/1 bao</span></p>   
-				     <div class="button"><span><a href="details.php" class="details">Chi tiết</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="details.php"><img src="images/gach-kinh-kim-cuong.jpg" alt="" /></a>
-					 <h2>Gạch kính kim cương </h2>
-					 <p>Tô điểm cho không gian sống hiện đại</p>
-					 <p><span class="price">$220.97</span></p> 
-				     <div class="button"><span><a href="details.php" class="details">Chi tiết</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<img src="images/ngoinoc_cogo.jpg" alt="" />
-					 <h2>Ngói nóc có gờ </h2>
-					 <p>dùng để lợp mái nhà, chất lượng cao</p>
-					 <p><span class="price">$415.54</span></p>  
-				     <div class="button"><span><a href="details.php" class="details">Chi tiết</a></span></div>
-				</div>
+				<?php
+			}
+			}
+				?>
 			</div>
 			<div class="content_bottom">
     		<div class="heading">
@@ -47,32 +37,25 @@
     		<div class="clear"></div>
     	</div>
 			<div class="section group">
+				<?php
+				$product_new = $product->getproduct_new();
+				if($product_new){
+					while($result_new = $product_new->fetch_assoc()){
+				
+			  	?>
 				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="details.php"><img src="images/ton-song-ngoi-phuong-nam.jpg" alt="" /></a>
-					 <h2>Tôn Giả Ngói Phương Nam </h2>
-					 <p><span class="price">$403.66</span></p>
-				     <div class="button"><span><a href="details.php" class="details">Details</a></span></div>
+					 <a href="details.php?proid=<?php echo $result_new['productId'] ?>"><img src="admin/uploads/<?php echo $result_new['image'] ?>" alt="" /></a>
+					 <h2><?php echo $result_new['productName'] ?></h2>
+					 <p><?php echo $fm->textShorten($result_new['product_desc'],50) ?></p>
+					 <p><span class="price"><?php echo $result_new['price']. " VND" ?></span></p>
+				     <div class="button"><span><a href="details.php?proid=<?php echo $result_new['productId'] ?>" class="details">Chi tiết</a></span></div>
 				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="details.php"><img src="images/xi-mang-nghi-son.jpg" alt="" /></a>
-					 <h2>Xi măng Nghi Sơn </h2>
-					 <p><span class="price">72.000đ</span></p> 
-				     <div class="button"><span><a href="details.php" class="details">Details</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="details.php"><img src="images/gdtt.jpg" alt="" /></a>
-					 <h2>Gach đinh Thành Tâm </h2>
-					 <p><span class="price">1.090 đồng/viên</span></p>
-				     <div class="button"><span><a href="details.php" class="details">Details</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-				 <img src="images/gach-granite.jpg" alt="" />
-					 <h2>GẠCH GRANITE 80802 </h2>					 
-					 <p><span class="price">595.000 vnđ/ m2</span></p>
-
-				     <div class="button"><span><a href="details.php" class="details">Details</a></span></div>
-				</div>
+				<?php
+				}	
+			}
+				?>
 			</div>
+			
     </div>
 </div>
 <?php 
