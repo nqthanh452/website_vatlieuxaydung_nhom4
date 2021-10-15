@@ -17,6 +17,7 @@
 	$us = new user();
 	$cat = new category();
 	$product = new product();
+	$cs = new customer();
 ?>
 
 <?php
