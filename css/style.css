@@ -2485,3 +2485,7 @@ p.terms {
 	color: red;
 	font-size: 18px;
 }
+input.grey {
+	font-size: 19px;
+	background: #fff;
+}

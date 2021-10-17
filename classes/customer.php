@@ -25,7 +25,7 @@ class customer
         $address = mysqli_real_escape_string($this->db->link, $data['address']);
         $country = mysqli_real_escape_string($this->db->link, $data['country']);
         $phone = mysqli_real_escape_string($this->db->link, $data['phone']);
-        $password = mysqli_real_escape_string($this->db->link, $data['password']);
+        $password = mysqli_real_escape_string($this->db->link, md5($data['password']));
         if($name=="" || $city=="" || $zipcode=="" || $email=="" || $address=="" || $country=="" || $phone==""|| $password=="" ){
             $alert= "<span class='error'>Fields must be not empty</span>";
             return $alert;
@@ -50,6 +50,28 @@ class customer
 
         }
         
+    }
+    public function login_customers($data){
+        $email = mysqli_real_escape_string($this->db->link, $data['email']);
+        $password = mysqli_real_escape_string($this->db->link, md5($data['password']));
+        if($email=='' || $password==''){
+            $alert= "<span class='error'>Password and Email must be not empty</span>";
+            return $alert;
+        }else{
+            $check_login = "SELECT * FROM tbl_customer WHERE email='$email' AND password='$password'";
+            $result_check = $this->db->select($check_login);
+            if($result_check){
+                $value = $result_check ->fetch_assoc();
+                session::set('customer_login',true);
+                session::set('customer_id',$value['id']);
+                session::set('customer_name',$value['name']);
+                header('Location:order.php');
+            }else{
+                $alert = "<span class='error'>Email or Password doesn't match</span>";
+                return $alert;
+            }
+
+        }
     }
 }
 ?>
