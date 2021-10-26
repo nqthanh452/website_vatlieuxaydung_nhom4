@@ -1,6 +1,6 @@
 <?php
 	include 'inc/header.php';
-	include 'inc/slider.php';
+	//include 'inc/slider.php';
  ?>
  <?php
  	$login_check = Session::get('customer_login');
@@ -94,6 +94,6 @@ if ($_SERVER['REQUEST_METHOD'] =='POST' && isset($_POST['submit'])) {
     </div>
  </div>
 
- <?php 
+<?php 
 	include 'inc/footer.php';
 ?>

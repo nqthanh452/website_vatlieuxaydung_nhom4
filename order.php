@@ -1,13 +1,13 @@
 <?php
 	include 'inc/header.php';
-	include 'inc/slider.php';
- ?>
- <?php
+//	include 'inc/slider.php';
+?>
+<?php
  	$login_check = Session::get('customer_login');
-		   	if($login_check==false){
-		   		header('Location:login.php');
-		   	}
- ?>
+		if($login_check==false){
+			header('Location:login.php');
+		}
+?>
  <style>
  	.order_page {
  	font-size: 30px;
@@ -30,6 +30,6 @@
     </div>
  </div>
 
- <?php 
+<?php 
 	include 'inc/footer.php';
 ?>
