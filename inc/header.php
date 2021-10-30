@@ -1,7 +1,6 @@
 <?php
     include 'lib/session.php';
     Session::init();
-
 ?>
 <?php
 	include_once 'lib/database.php';
@@ -10,7 +9,6 @@
 	spl_autoload_register(function($className){
 		include_once "classes/".$className.".php";
 	});
-
 	$db = new Database();
 	$fm = new Format();
 	$ct = new cart();
@@ -19,14 +17,12 @@
 	$product = new product();
 	$cs = new customer();
 ?>
-
 <?php
   header("Cache-Control: no-cache, must-revalidate");
   header("Pragma: no-cache"); 
   header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); 
   header("Cache-Control: max-age=2592000");
 ?>
-
 <!DOCTYPE HTML>
 <head>
 <title>Store Website</title>
@@ -79,7 +75,6 @@
 											}else{
 											echo 'Trống';
 										}
-
 									?>
 								</span>
 							</a>
@@ -90,6 +85,12 @@
 			  		Session::destroy();
 			  	}
 			  ?>
+			  <?php
+			  if (isset($_GET['customer_id'])){
+				  $delCart = $ct->del_all_data_cart();
+				  session::destroy();
+			  }
+			  ?>
 		   <div class="login">
 		   	<?php
 		   	$login_check = Session::get('customer_login');
@@ -99,8 +100,6 @@
 		   		echo '<a href="?customer_id='.Session::get('customer_id').'">Đăng xuất</a></div>';
 		   	}
 		   	?>
-
-		   
 		 <div class="clear"></div>
 	 </div>
 	 <div class="clear"></div>
@@ -110,7 +109,22 @@
 	  <li><a href="index.php">Trang chủ</a></li>
 	  <li><a href="products.php">Sản phẩm</a> </li>
 	  <li><a href="topbrands.php">Thương hiệu hàng đầu</a></li>
-	  <li><a href="cart.php">Giỏ hàng</a></li>
+	  <?php
+	  $check_cart =$ct-> check_cart();
+	  if($check_cart==true){
+		  echo '<li><a href="cart.php">Giỏ hàng</a></li>';
+	  }else{
+		  echo '';
+	  }
+	  ?>	 
+	  <?php
+	  $login_check = Session: : get('customer_login');
+	  if($login_check==false){
+		  echo '';
+	  }else{
+		  echo '<li><a href="profile.php">Trang cá nhân</a> </li>';
+	  }
+	  ?>
 	  <li><a href="contact.php">Hỗ trợ</a> </li>
 	  <div class="clear"></div>
 	</ul>
