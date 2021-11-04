@@ -3,9 +3,10 @@
 	//include 'inc/slider.php';
  ?>
 	  <?php
-	  $login_check = Session: : get('customer_login');
+	  $login_check = Session::get('customer_login');
 	  if($login_check==false){
-		  header ('Location::login.php');
+		  header ('Location:login.php');
+      }
 	  ?>
 <?php  
 //if(!isset($_GET['proid'])|| $_GET['proid'] == NULL){
@@ -38,50 +39,47 @@
             <tr>
                 <td>Tên</td>
                 <td>:</td>
-                <td><?php echo $result['name']</td>
+                <td><?php echo $result['name'] ?></td>
             <tr>
             <tr>
                 <td>Thành phố</td>
                 <td>:</td>
-                <td><?php echo $result['city']</td>
+                <td><?php echo $result['city'] ?></td>
             <tr>
             <tr>
                 <td>Số điện thoại</td>
                 <td>:</td>
-                <td><?php echo $result['phône']</td>
+                <td><?php echo $result['phone'] ?></td>
             <tr>
             <tr>
                 <td>Quốc Tịch</td>
                 <td>:</td>
-                <td><?php echo $result['country']</td>
+                <td><?php echo $result['country'] ?></td>
             <tr>
             <tr>
                 <td>zipcode</td>
                 <td>:</td>
-                <td><?php echo $result['zipcode']</td>
+                <td><?php echo $result['zipcode'] ?></td>
             <tr>
             <tr>
                 <td>Email</td>
                 <td>:</td>
-                <td><?php echo $result['email']</td>
+                <td><?php echo $result['email'] ?></td>
             <tr>
             <tr>
                 <td>Địa chỉ</td>
                 <td>:</td>
-                <td><?php echo $result['address']</td>
+                <td><?php echo $result['address'] ?></td>
             <tr>
             <?php
                 }
-            }
+                }
             ?>
-        </div>
+        </table>
  	</div>
 </div>
 
 <?php 
 	include 'inc/footer.php';
-?>	
-
-
-
-
+?>
+	
