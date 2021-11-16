@@ -2489,3 +2489,52 @@ input.grey {
 	font-size: 19px;
 	background: #fff;
 }
+.method-payment{ 
+	text-align: center;
+  font-weight: bold;
+}
+.payment_href{
+/* display: flex; */
+text-decoration: none;
+color: white;
+
+}
+.wrap-payment{
+	display: inline-flex;
+margin-top: 20px;
+}
+.wrap-payment >span {
+	padding: 12px;
+	margin: 0 5px;
+	border-radius: 5px;
+	justify-content: center;
+	background: #602D8D;
+	font-weight: normal;
+	color: white;
+}
+.return-cart{
+	    left: 80px;
+	    position: relative;
+}
+.box_left{
+width: 50%;
+border: 1px solid #666;
+float: left;
+padding: 4px;
+}
+.box_right{
+width: 46%;
+border: 1px solid #666;
+float: right;
+padding: 4px;
+}
+.submit-order{
+	padding: 10px;
+	background-color: #602D8D;
+	border: none;
+	font-size: 20px;
+	color: white;
+	border-radius: 5px;
+	margin: 10px auto;
+	display:flex ;
+}

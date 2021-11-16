@@ -78,5 +78,27 @@ class customer
         $result = $this->db->select($query);
         return $result;
     }
+    public function update_customers($data, $id){
+        $name = mysqli_real_escape_string($this->db->link, $data['name']);
+        $zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
+        $email = mysqli_real_escape_string($this->db->link, $data['email']);
+        $address = mysqli_real_escape_string($this->db->link, $data['address']);
+        $phone = mysqli_real_escape_string($this->db->link, $data['phone']);
+        if($name=="" || $zipcode=="" || $email=="" || $address=="" || $phone=="" ){
+            $alert= "<span class='error'>Fields must be not empty</span>";
+            return $alert;
+        }else{
+                $query = "UPDATE tbl_customer set name='$name',  zipcode='$zipcode', email='$email', address='$address',  phone='$phone' where id='$id'";
+				$result = $this->db->insert($query);
+				if($result){
+                    $alert = "<span class='success'>Customer Updated Successfully</span>";
+                    return $alert;
+                }else{
+                    $alert = "<span class='error'>Customer Updated Not Successfully</span>";
+                    return $alert;
+                } 
+
+        }        
+    }
 }
 ?>
