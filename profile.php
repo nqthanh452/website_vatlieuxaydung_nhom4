@@ -28,7 +28,7 @@
     		</div>
     		<div class="clear"></div>
     	</div>
-        <table class = "tblone">
+        <table class="tblone">
             <?php
             $id = session::get('customer_id');
             $get_customer =$cs->show_customer($id);
@@ -39,40 +39,35 @@
                 <td>Tên</td>
                 <td>:</td>
                 <td><?php echo $result['name'] ?></td>
-            <tr>
+                </tr>
             <tr>
                 <td>Thành phố</td>
                 <td>:</td>
                 <td><?php echo $result['city'] ?></td>
-            <tr>
+                </tr>
             <tr>
                 <td>Số điện thoại</td>
                 <td>:</td>
                 <td><?php echo $result['phone'] ?></td>
-            <tr>
-            <tr>
-                <td>Quốc Tịch</td>
-                <td>:</td>
-                <td><?php echo $result['country'] ?></td>
-            <tr>
+                </tr>
             <tr>
                 <td>Zipcode</td>
                 <td>:</td>
                 <td><?php echo $result['zipcode'] ?></td>
-            <tr>
+                </tr>
             <tr>
                 <td>Email</td>
                 <td>:</td>
                 <td><?php echo $result['email'] ?></td>
-            <tr>
+                </tr>
             <tr>
                 <td>Địa chỉ</td>
                 <td>:</td>
                 <td><?php echo $result['address'] ?></td>
-            <tr>
+                </tr>
             <tr>
                 <td colspan='3'><a href='editprofile.php'>Sửa thông tin cá nhân</a></td>
-            <tr>                
+                </tr>                
             <?php
                 }
                 }
