@@ -171,5 +171,26 @@ class product
      $result = $this->db->select($query);
      return $result;
   }
+ 
+  public function getLastestHoaSen(){
+     $query = "SELECT * FROM tbl_product WHERE brandId = '12' order by productId desc LIMIT 1";
+    $result = $this->db->select($query);
+    return $result;
+  }
+   public function getLastestDongTam(){
+     $query = "SELECT * FROM tbl_product WHERE brandId = '13' order by productId desc LIMIT 1";
+    $result = $this->db->select($query);
+    return $result;
+  }
+   public function getLastestHoaPhat(){
+     $query = "SELECT * FROM tbl_product WHERE brandId = '14' order by productId desc LIMIT 1";
+    $result = $this->db->select($query);
+    return $result;
+  }
+   public function getLastestNhuaBinhMinh(){
+     $query = "SELECT * FROM tbl_product WHERE brandId = '14' order by productId desc LIMIT 1";
+    $result = $this->db->select($query);
+    return $result;
+  }
 }
 ?>
