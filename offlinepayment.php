@@ -3,11 +3,12 @@
 	//include 'inc/slider.php';
  ?>
 <?php  
-// if(!isset($_GET['proid'])|| $_GET['proid'] == NULL){
-//     echo "<script>windown.location ='404.php' </script>";
-// }else{
-//     $id = $_GET['proid'];
-// }
+if(isset($_GET['orderid']) && $_GET['orderid'] =="order"){
+    $customer_id = Session::get('customer_id');
+	$insertOrder = $ct->insertOrder($customer_id);
+	$delCart = $ct->del_all_data_cart();
+	header('Location:success.php');
+}
 // if($_SERVER['REQUEST_METHOD'] =='POST' && isset($_POST['submit'])) {
 //     $quantity = $_POST['quantity'];
 //     $AddtoCart = $ct->add_to_cart($quantity,$id);
@@ -154,7 +155,8 @@
         </div>
     </div>
   </div>
-		<input type="submit" class='submit-order' value="Đặt hàng ngay" name="order"/>
+	<a href="?orderid=order" class="submit-order">Đặt Hàng Ngay</a>
+		<!-- <input type="submit" class='submit-order' value="Đặt hàng ngay" name="order"/> -->
 </div>
 </form>
 <?php 

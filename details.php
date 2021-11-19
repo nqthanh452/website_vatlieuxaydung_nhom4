@@ -60,8 +60,18 @@ if($_SERVER['REQUEST_METHOD'] =='POST' && isset($_POST['submit'])) {
 				<div class="rightsidebar span_3_of_1">
 					<h2>CATEGORIES</h2>
 					<ul>
-				      <li><a href="productbycat.php">Mobile Phones</a></li>
-				      
+					<?php
+					$getall_catgory = $cat->show_category_frontend();
+						if($getall_catgory){
+								while($result_allcat = $getall_catgory->fetch_assoc()){
+						
+
+					?>
+				      <li><a href="productbycat.php?catid=<?php echo $result_allcat['catId'] ?>"><?php echo $result_allcat['catName']  ?></a></li>
+				    <?php
+								}
+						}
+					?> 
     				</ul>
     	
  				</div>
