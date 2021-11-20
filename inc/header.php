@@ -116,7 +116,17 @@
 	  }else{
 		  echo '';
 	  }
-	  ?>	 
+	  ?>	
+
+	  <?php
+	  $customer_id = Session::get('customer_id');
+	  $check_order =$ct-> check_order($customer_id);
+	  if($check_order==true){
+		  echo '<li><a href="orderdetails.php">Hàng đã đặt</a></li>';
+	  }else{
+		  echo '';
+	  }
+	  ?> 
 	  <?php
 	  $login_check = Session::get('customer_login');
 	  if($login_check==false){
