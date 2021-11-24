@@ -7,6 +7,13 @@ include 'inc/header.php';
 	 if($login_check == false){
 		 header('Location:login.php');
 	 }
+	 $ct =new cart();
+	 if(!isset($_GET['confirmid'])){
+		$id = $_GET['confirmid'];
+		$time = $_GET['time'];
+		$price = $_GET['price'];
+		$shifted_confirm = $ct->$shifted_confirm($id,$time,$price);
+	}
 ?> 
  <div class="main">
     <div class="content">
@@ -47,9 +54,16 @@ include 'inc/header.php';
 								<td>
 									<?php 
 										if($result['status']=='0'){
-											echo 'Pending';
-										}else{
-											echo 'Processed';
+											echo 'Đang chờ xử lý';
+										}elseif($result['status']==1){
+										?>
+										<span>Đang vận chuyển</span>
+										
+										<?php
+
+										}elseif($result['status']==2){
+											echo 'Đã nhận hàng';
+
 										}
 									?>
 								</td>
@@ -58,11 +72,14 @@ include 'inc/header.php';
 								?>
 								<td><?php echo 'N/A';?></td>
 								<?php 
-							   }else{
-
-							  
+							   }elseif($result['status']=='1'){
 								?>
-								<td><a href="?cartid=<?php echo $result['cartId']?>">Xóa</a></td>
+									<td><a href="?comfirmid=<?php echo $customer_id ?>&price=<?php echo $result['price'] ?>&time=<?php echo 
+											$result['date_order'] ?>">Đã xác nhận</a></td>
+								<?php
+							   }else{
+								?>
+								<td><?php echo 'Đã nhận hàng'; ?></td>
 								<?php 
 								}
 								?>

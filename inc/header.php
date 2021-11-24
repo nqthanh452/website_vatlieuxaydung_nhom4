@@ -135,6 +135,7 @@
 		  echo '<li><a href="profile.php">Trang cá nhân</a> </li>';
 	  }
 	  ?>
+	  <li><a href="compare.php">So sánh sản phẩm</a> </li>
 	  <li><a href="contact.php">Hỗ trợ</a> </li>
 	  <div class="clear"></div>
 	</ul>

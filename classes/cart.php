@@ -141,5 +141,51 @@ class cart
 		$get_inbox_cart = $this->db->select($query);
 		return $get_inbox_cart;
 	}
+	public function shifted($id,$time,$price){
+		$id = mysqli_real_escape_string($this->db->link, $id);
+		$time = mysqli_real_escape_string($this->db->link, $time);
+		$price = mysqli_real_escape_string($this->db->link, $price);
+		$query = "UPDATE tbl_order set 
+		status = '1'
+		WHERE id='$id' AND date_order='$time' AND price = '$price'"; 
+		$result= $this->db->update($query);
+		if($result){
+			$msg = "<span class='success'>Update order successfully</span>";
+			return $msg;
+		}
+		else{
+				$msg = "<span class='error'>Update order not successfully</span>";
+				return $msg;
+		}
+
+	}
+	public function del_shifted($id,$time,$price){
+		$id = mysqli_real_escape_string($this->db->link, $id);
+		$time = mysqli_real_escape_string($this->db->link, $time);
+		$price = mysqli_real_escape_string($this->db->link, $price);
+		$query = "DELETE FROM tbl_order 
+		WHERE id='$id' AND date_order='$time' AND price = '$price'"; 
+		$result= $this->db->update($query);
+		if($result){
+			$msg = "<span class='success'>Delete order successfully</span>";
+			return $msg;
+		}
+		else{
+				$msg = "<span class='error'>Delete order not successfully</span>";
+				return $msg;
+		}
+
+	}
+	public function shifted_confirm($id,$time,$price){
+		$id = mysqli_real_escape_string($this->db->link, $id);
+		$time = mysqli_real_escape_string($this->db->link, $time);
+		$price = mysqli_real_escape_string($this->db->link, $price);
+		$query = "UPDATE tbl_order set 
+		status = '2'
+		WHERE customer_id='$id' AND date_order='$time' AND price = '$price'"; 
+		$result= $this->db->update($query);
+		return $result;
+		
+	}
 }
 ?>
