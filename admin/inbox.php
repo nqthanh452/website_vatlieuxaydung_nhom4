@@ -8,13 +8,13 @@ include_once ($filepath.'/../helpers/format.php');
 ?>
 <?php
 $ct =new cart();
-if(!isset($_GET['shiftid'])){
+if(isset($_GET['shiftid'])){
 	$id = $_GET['shiftid'];
 	$time = $_GET['time'];
 	$price = $_GET['price'];
 	$shifted = $ct->shifted($id,$time,$price);
 }
-if(!isset($_GET['delid'])){
+if(isset($_GET['delid'])){
 	$id = $_GET['delid'];
 	$time = $_GET['time'];
 	$price = $_GET['price'];
