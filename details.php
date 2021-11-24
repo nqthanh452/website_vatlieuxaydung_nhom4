@@ -4,7 +4,7 @@
  ?>
 <?php  
 if(!isset($_GET['proid'])|| $_GET['proid'] == NULL){
-    echo "<script>windown.location ='404.php' </script>";
+    //echo "<script>windown.location ='404.php' </script>";
 }else{
     $id = $_GET['proid'];
 }
@@ -44,6 +44,11 @@ if($_SERVER['REQUEST_METHOD'] =='POST' && isset($_POST['submit'])) {
                                 echo '<span style = "color:red;font-size:18px;">'.$AddtoCart.'</span>';
                             }
                         ?>
+                     		
+				</div>
+				<div class="add-cart">
+					<a href="?wlist=<?php echo $result_details['productId'] ?>" class="buysubmit">Lưu vào danh sách yêu thích</a>
+					<a href="?compare=<?php echo $result_details['productId'] ?>" class="buysubmit">So sánh sản phẩm</a>
                      		
 				</div>
 			</div>
