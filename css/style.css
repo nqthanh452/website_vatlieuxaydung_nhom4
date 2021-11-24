@@ -2529,7 +2529,7 @@ float: right;
 padding: 4px;
 }
 .submit-order{
-	padding: 10px 70px;
+	padding: 10px;
 	background-color: #602D8D;
 	border: none;
 	font-size: 20px;
@@ -2537,4 +2537,9 @@ padding: 4px;
 	border-radius: 5px;
 	margin: 10px auto;
 	display:flex ;
+	display: flex;
+	width: 142px;
+	text-align: center;
+	justify-content: center;
+	margin-bottom: 33px;
 }
