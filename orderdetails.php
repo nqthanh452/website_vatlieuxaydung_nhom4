@@ -8,7 +8,7 @@ include 'inc/header.php';
 		 header('Location:login.php');
 	 }
 	 $ct =new cart();
-	 if(!isset($_GET['confirmid'])){
+	 if(isset($_GET['confirmid'])){
 		$id = $_GET['confirmid'];
 		$time = $_GET['time'];
 		$price = $_GET['price'];
