@@ -86,9 +86,18 @@ class category
     }
 	public function get_product_by_cat($id){
 		
-        $query = "SELECT * FROM tbl_category WHERE catId='$id' order by catId desc LIMIT 8";
+        $query = "SELECT * FROM tbl_product WHERE catId='$id' order by catId desc LIMIT 8";
 		$result = $this->db->select($query);
         return $result;
 	}
+	public function get_name_by_cat($id){
+		
+        $query = "SELECT tbl_product.*,tbl_category.catName,tbl_category.catId FROM tbl_product,tbl_category WHERE tbl_product.catId=tbl_category.catId AND tbl_product.catId ='$id' LIMIT 1";
+		$result = $this->db->select($query);
+        return $result;
+	}
+
+
+
 }
 ?>
