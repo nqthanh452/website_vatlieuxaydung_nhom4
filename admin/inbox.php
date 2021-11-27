@@ -72,16 +72,16 @@ if(isset($_GET['delid'])){
 								<?php 
 								if($result['status'] ==0){
 								?>
-								<a href="?shifid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo 
+								<a href="?shiftid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo 
 								$result['date_order'] ?>">Đang chờ xử lý</a>
 								<?php
 								}elseif($result['status'] ==1){
 								?>
+							<?php
+							echo 'Đang vận chuyển';
+							?>
 								<?php
-									echo 'Đang vận chuyển';
-								?>
-								<?php
-								}elseif($result['status']==2){
+								}else{
 								?>
 								<a href="?delid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo 
 								$result['date_order'] ?>">Xóa</a>

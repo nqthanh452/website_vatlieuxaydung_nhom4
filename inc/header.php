@@ -136,7 +136,7 @@
 	  }
 	  ?>
 	  <li><a href="compare.php">So sánh sản phẩm</a> </li>
-	  <li><a href="contact.php">Hỗ trợ</a> </li>
+	  <li><a href="contact.php">Liên hệ</a> </li>
 	  <div class="clear"></div>
 	</ul>
 </div>

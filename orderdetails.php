@@ -12,7 +12,7 @@ include 'inc/header.php';
 		$id = $_GET['confirmid'];
 		$time = $_GET['time'];
 		$price = $_GET['price'];
-		$shifted_confirm = $ct->$shifted_confirm($id,$time,$price);
+		$shifted_confirm = $ct->shifted_confirm($id,$time,$price);
 	}
 ?> 
  <div class="main">
@@ -23,14 +23,14 @@ include 'inc/header.php';
 						
 						<table class="tblone">
 							<tr>
-								<th width="20%">ID</th>
+								<th width="5%">ID</th>
 								<th width="20%">Product Name</th>
 								<th width="10%">Image</th>
 								<th width="15%">Price</th>
 								<th width="15%">Quantity</th>
 								<th width="10%">Date</th>
 								<th width="10%">Status</th>
-								<th width="10%">Action</th>
+								<th width="25%">Action</th>
 							</tr>
 							<?php
 							$customer_id = Session::get('customer_id');
@@ -57,7 +57,7 @@ include 'inc/header.php';
 											echo 'Đang chờ xử lý';
 										}elseif($result['status']==1){
 										?>
-										<span>Đang vận chuyển</span>
+										<span>Đang giao hàng</span>
 										
 										<?php
 
@@ -67,20 +67,23 @@ include 'inc/header.php';
 										}
 									?>
 								</td>
-								<?php 
-								if($result['status']=='0'){
-								?>
-								<td><?php echo 'N/A';?></td>
-								<?php 
-							   }elseif($result['status']=='1'){
-								?>
-									<td><a href="?comfirmid=<?php echo $customer_id ?>&price=<?php echo $result['price'] ?>&time=<?php echo 
-											$result['date_order'] ?>">Đã xác nhận</a></td>
 								<?php
-							   }else{
+								if($result['status']=='0'){
+									?>
+									<td><?php echo 'N/A';?></td>
+									<?php
+								}elseif($result['status']=='1'){
+									?>
+									<td><a href="?confirmid=<?php echo $customer_id
+									?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Xác nhận đã nhận hàng</a></td>
+									<?php
+
+								}else{							
 								?>
-								<td><?php echo 'Đã nhận hàng'; ?></td>
-								<?php 
+								<td>
+								<?php echo "Đã nhận hàng"; ?>
+								</td>		
+								<?php
 								}
 								?>
 							</tr>
